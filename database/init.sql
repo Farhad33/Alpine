@@ -1,0 +1,22 @@
+CREATE TABLE patient (
+    id serial PRIMARY KEY,
+    client_id VARCHAR (50),
+    date_testing VARCHAR (50),
+    date_birthdate VARCHAR (50),
+    gender INTEGER,
+    ethnicity INTEGER,
+    creatine DOUBLE PRECISION,
+    chloride DOUBLE PRECISION,
+    fasting_glucose DOUBLE PRECISION,
+    potassium DOUBLE PRECISION,
+    sodium DOUBLE PRECISION,
+    total_calcium DOUBLE PRECISION,
+    total_protein DOUBLE PRECISION,
+    creatine_unit VARCHAR (50),
+    chloride_unit VARCHAR (50),
+    fasting_glucose_unit VARCHAR (50),
+    potassium_unit VARCHAR (50),
+    sodium_unit VARCHAR (50),
+    total_calcium_unit VARCHAR (50),
+    total_protein_unit VARCHAR (50)
+);

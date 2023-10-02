@@ -1,0 +1,34 @@
+version: '4.0.1'
+services:
+
+  patients:
+    build:
+      dockerfile: Dockerfile
+      context: ./patients
+    container_name: patients
+    ports:
+      - "5002:5002"
+    restart: always
+    env_file:
+      - ./patients/.env.dev
+
+  import-patients:
+    build:
+      dockerfile: Dockerfile
+      context: ./import-patients
+    container_name: import-patients
+    ports:
+      - "5001:5001"
+    restart: always
+    env_file:
+      - ./import-patients/.env.dev
+
+  # nginx-proxy:
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./proxy
+  #   depends_on:
+  #     - patients
+  #     - import-patients
+  #   ports:
+  #     - 80:80

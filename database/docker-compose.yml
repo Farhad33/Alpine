@@ -1,0 +1,21 @@
+version: '4.0.1'
+services:
+
+  postgres-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: majid
+      POSTGRES_USER: majid
+      POSTGRES_DB: majid
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432" # Map host port 5432 to container port 5432
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
